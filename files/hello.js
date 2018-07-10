@@ -9,12 +9,12 @@ var Request = require('tedious').Request;
 // Create connection to database
 var config = 
    {
-     userName: 'azure', // update me
+     userName: 'readylab', // update me
      password: 'Corp.123456!', // update me
-     server: 'readylab2.database.windows.net', // update me
+     server: 'CHANGEME.database.windows.net', // update me
      options: 
         {
-           database: 'readylab2' //update me
+           database: 'readylab' //update me
            , encrypt: true
         }
    }

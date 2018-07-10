@@ -12,17 +12,21 @@ $url3 = "https://github.com/tjanczuk/iisnode/releases/download/v0.2.21/iisnode-f
 $output3 = "D:\iisnode.msi"
 Invoke-WebRequest -Uri $url3 -OutFile $output3
 
-$urlapplicationHost = "https://github.com/tjanczuk/iisnode/releases/download/v0.2.21/iisnode-full-v0.2.21-x64.msi"
+$urlapplicationHost = "https://raw.githubusercontent.com/sfiguemsft/serviceendpoints/master/files/applicationHost.config"
 $config = "C:\Windows\system32\inetsrv\config\applicationHost.config"
 Invoke-WebRequest -Uri $urlapplicationHost -OutFile $config 
 
-cd C:\Program Files\iisnode\www\logging>
+D:\rewrite.msi /quiet
+D:\iisnode.msi /quiet
+D:\node.msi /quiet
 
-npm init -y 
-npm install tedious 
-npm install async
+Set-Location "C:\Program Files\iisnode\www\logging"
 
-$hellojs =  "https://github.com/"
+& "C:\Program Files\nodejs\npm.cmd" init -y
+& "C:\Program Files\nodejs\npm.cmd" install tedious
+& "C:\Program Files\nodejs\npm.cmd" install async
+
+$hellojs =  "https://raw.githubusercontent.com/sfiguemsft/serviceendpoints/master/files/hello.js"
 $oldfile = "D:\OldFile.txt"
 $newfile = "C:\Program Files\iisnode\www\logging\hello.js"
 
