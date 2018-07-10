@@ -25,6 +25,7 @@ Set-Location "C:\Program Files\iisnode\www\logging"
 & "C:\Program Files\nodejs\npm.cmd" init -y
 & "C:\Program Files\nodejs\npm.cmd" install tedious
 & "C:\Program Files\nodejs\npm.cmd" install async
+& "C:\Program Files\iisnode\setupsamples.bat" /s
 
 $hellojs =  "https://raw.githubusercontent.com/sfiguemsft/serviceendpoints/master/files/hello.js"
 $oldfile = "D:\OldFile.txt"
@@ -34,7 +35,5 @@ Invoke-WebRequest -Uri $hellojs  -OutFile $oldfile
  
 $text = (Get-Content -Path $oldfile -ReadCount 0)
 $text -replace 'CHANGEME.database.windows.net','test.database.windows.net' | Set-Content -Path $newfile -Force
-
-
 
 Restart-Computer
