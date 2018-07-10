@@ -1,5 +1,7 @@
 ﻿Add-WindowsFeature Web-Server
 
+Get-Job | Wait-Job
+
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
 $url1 = "http://download.microsoft.com/download/D/D/E/DDE57C26-C62C-4C59-A1BB-31D58B36ADA2/rewrite_amd64_en-US.msi"
