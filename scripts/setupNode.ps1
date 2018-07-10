@@ -1,4 +1,6 @@
-﻿[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
+﻿Add-WindowsFeature Web-Server
+
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
 $url1 = "http://download.microsoft.com/download/D/D/E/DDE57C26-C62C-4C59-A1BB-31D58B36ADA2/rewrite_amd64_en-US.msi"
 $output1 = "D:\rewrite.msi"
@@ -35,4 +37,4 @@ Invoke-WebRequest -Uri $hellojs  -OutFile $oldfile
 $text = (Get-Content -Path $oldfile -ReadCount 0)
 $text -replace 'CHANGEME.database.windows.net','test.database.windows.net' | Set-Content -Path $newfile -Force
 
-Restart-Computer
+Restart-Service w3svc
