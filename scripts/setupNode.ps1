@@ -18,6 +18,8 @@ $setup = "https://raw.githubusercontent.com/sfiguemsft/serviceendpoints/master/s
 $output = "D:\setupNode.ps1"
 Invoke-WebRequest -Uri $setup -OutFile $output
 
+Start-Sleep -s 30
+
 D:\iisnode.msi /quiet
 D:\rewrite.msi /quiet
 D:\node.msi /quiet
