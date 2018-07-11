@@ -42,4 +42,4 @@ Invoke-WebRequest -Uri $hellojs  -OutFile $oldfile
 $text = (Get-Content -Path $oldfile -ReadCount 0)
 $text -replace 'CHANGEME.database.windows.net','test.database.windows.net' | Set-Content -Path $newfile -Force
 
-Restart-Service W3SVC
+& "iisreset"
