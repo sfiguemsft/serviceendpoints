@@ -18,9 +18,9 @@ $setup = "https://raw.githubusercontent.com/sfiguemsft/serviceendpoints/master/s
 $output = "D:\setupNode.ps1"
 Invoke-WebRequest -Uri $setup -OutFile $output
 
-& "D:\iisnode.msi" /quiet
-& "D:\rewrite.msi" /quiet
-& "D:\node.msi" /quiet
+D:\iisnode.msi /quiet
+D:\rewrite.msi /quiet
+D:\node.msi /quiet
 
 $urlapplicationHost = "https://raw.githubusercontent.com/sfiguemsft/serviceendpoints/master/files/applicationHost.config"
 $config = "C:\Windows\system32\inetsrv\config\applicationHost.config"
