@@ -14,6 +14,10 @@ $url3 = "https://github.com/tjanczuk/iisnode/releases/download/v0.2.21/iisnode-f
 $output3 = "D:\iisnode.msi"
 Invoke-WebRequest -Uri $url3 -OutFile $output3
 
+$setup = "https://raw.githubusercontent.com/sfiguemsft/serviceendpoints/master/scripts/setupNode.ps1"
+$output = "D:\setupNode.ps1"
+Invoke-WebRequest -Uri $setup -OutFile $output
+
 & "D:\iisnode.msi" /quiet
 & "D:\rewrite.msi" /quiet
 & "D:\node.msi" /quiet
