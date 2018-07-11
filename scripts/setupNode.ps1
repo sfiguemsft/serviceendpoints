@@ -7,17 +7,18 @@ Get-Job | Wait-Job
 $url1 = "http://download.microsoft.com/download/D/D/E/DDE57C26-C62C-4C59-A1BB-31D58B36ADA2/rewrite_amd64_en-US.msi"
 $output1 = "D:\rewrite.msi"
 Invoke-WebRequest -Uri $url1 -OutFile $output1
-& "D:\rewrite.msi" /quiet
 
 $url2 = "https://nodejs.org/dist/v8.11.3/node-v8.11.3-x64.msi"
 $output2 = "D:\node.msi"
 Invoke-WebRequest -Uri $url2 -OutFile $output2
-& "D:\node.msi" /quiet
 
 $url3 = "https://github.com/tjanczuk/iisnode/releases/download/v0.2.21/iisnode-full-v0.2.21-x64.msi"
 $output3 = "D:\iisnode.msi"
 Invoke-WebRequest -Uri $url3 -OutFile $output3
+
 & "D:\iisnode.msi" /quiet
+& "D:\rewrite.msi" /quiet
+& "D:\node.msi" /quiet
 
 $urlapplicationHost = "https://raw.githubusercontent.com/sfiguemsft/serviceendpoints/master/files/applicationHost.config"
 $config = "C:\Windows\system32\inetsrv\config\applicationHost.config"
