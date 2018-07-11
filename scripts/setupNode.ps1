@@ -1,4 +1,4 @@
-﻿#Add-WindowsFeature Web-Server
+﻿Add-WindowsFeature Web-Server
 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
@@ -38,4 +38,4 @@ Invoke-WebRequest -Uri $hellojs  -OutFile $oldfile
 $text = (Get-Content -Path $oldfile -ReadCount 0)
 $text -replace 'CHANGEME.database.windows.net','test.database.windows.net' | Set-Content -Path $newfile -Force
 
-Restart-Computer
+#Restart-Computer
