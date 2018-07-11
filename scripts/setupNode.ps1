@@ -1,4 +1,4 @@
-﻿Add-WindowsFeature Web-Server
+﻿#Add-WindowsFeature Web-Server
 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12;
 
